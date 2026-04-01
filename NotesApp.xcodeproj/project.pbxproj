@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		FD38797D2F3D1C89008757AC /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD38797D2F3D1C89008757AC /* NotesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		FD38797F2F3D1C89008757AC /* TestApp */ = {
+		FD38797F2F3D1C89008757AC /* NotesApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TestApp;
+			path = NotesApp;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -32,7 +32,7 @@
 		FD3879742F3D1C89008757AC = {
 			isa = PBXGroup;
 			children = (
-				FD38797F2F3D1C89008757AC /* TestApp */,
+				FD38797F2F3D1C89008757AC /* NotesApp */,
 				FD38797E2F3D1C89008757AC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -40,7 +40,7 @@
 		FD38797E2F3D1C89008757AC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FD38797D2F3D1C89008757AC /* TestApp.app */,
+				FD38797D2F3D1C89008757AC /* NotesApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,9 +48,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FD38797C2F3D1C89008757AC /* TestApp */ = {
+		FD38797C2F3D1C89008757AC /* NotesApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FD3879882F3D1C8B008757AC /* Build configuration list for PBXNativeTarget "TestApp" */;
+			buildConfigurationList = FD3879882F3D1C8B008757AC /* Build configuration list for PBXNativeTarget "NotesApp" */;
 			buildPhases = (
 				FD3879792F3D1C89008757AC /* Sources */,
 				FD38797A2F3D1C89008757AC /* Frameworks */,
@@ -61,13 +61,13 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				FD38797F2F3D1C89008757AC /* TestApp */,
+				FD38797F2F3D1C89008757AC /* NotesApp */,
 			);
-			name = TestApp;
+			name = NotesApp;
 			packageProductDependencies = (
 			);
 			productName = TestApp;
-			productReference = FD38797D2F3D1C89008757AC /* TestApp.app */;
+			productReference = FD38797D2F3D1C89008757AC /* NotesApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -99,7 +99,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FD38797C2F3D1C89008757AC /* TestApp */,
+				FD38797C2F3D1C89008757AC /* NotesApp */,
 			);
 		};
 /* End PBXProject section */
@@ -253,6 +253,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Notes;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -284,6 +285,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Notes;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -318,7 +320,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FD3879882F3D1C8B008757AC /* Build configuration list for PBXNativeTarget "TestApp" */ = {
+		FD3879882F3D1C8B008757AC /* Build configuration list for PBXNativeTarget "NotesApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FD3879892F3D1C8B008757AC /* Debug */,
