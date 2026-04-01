@@ -85,7 +85,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FD3879782F3D1C89008757AC /* Build configuration list for PBXProject "TestApp" */;
+			buildConfigurationList = FD3879782F3D1C89008757AC /* Build configuration list for PBXProject "NotesApp" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -309,7 +309,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FD3879782F3D1C89008757AC /* Build configuration list for PBXProject "TestApp" */ = {
+		FD3879782F3D1C89008757AC /* Build configuration list for PBXProject "NotesApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FD3879862F3D1C8B008757AC /* Debug */,
