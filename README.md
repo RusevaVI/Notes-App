@@ -16,7 +16,7 @@
 ---
 
 ### Обычная заметка  
-![Usual note](images/Usual note.png)
+![Usualnote](images/Usualnote.png)
 
 Позволяет создавать и редактировать текстовые заметки.
 
@@ -37,13 +37,13 @@
 Можно выбрать один из трёх типов холста:
 
 1. Обычный лист  
-![Blank paper](images/Blank paper.png)
+![Blankpaper](images/Blankpaper.png)
 
 2. В клетку  
-![Grid paper](images/Grid paper.png)
+![Gridpaper](images/Gridpaper.png)
 
 3. В линию  
-![Lines paper](images/Lines paper.png)
+![Linespaper](images/Linespaper.png)
 
 Также доступны кнопки:
 - Отменить — удаляет последнее действие  
@@ -69,5 +69,5 @@
 Все созданные заметки сохраняются на главном экране.  
 Сохранение происходит при нажатии кнопки «Назад» в левом верхнем углу.  
 
-![Common list](images/Common list.png)
+![Commonlist](images/Commonlist.png)
 
