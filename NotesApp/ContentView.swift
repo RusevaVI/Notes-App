@@ -26,7 +26,6 @@ struct ContentView: View {
                             
                             Spacer()
                             
-                            // Если это заметка с планом — выводим дату
                             if let plan = note.plan {
                                 Text(plan.date.formatted(date: .numeric, time: .shortened))
                                     .font(.subheadline)
@@ -49,7 +48,7 @@ struct ContentView: View {
                     }
                     
                     .onDelete { indexSet in
-                        notes.remove(atOffsets: indexSet) // удаляем заметку
+                        notes.remove(atOffsets: indexSet)
                     }
                     
                 }
@@ -67,8 +66,7 @@ struct ContentView: View {
                         Button ("Календарь") {
                             planingNote = Note(title: "Новое событие")
                         }
-                        
-                        
+    
                         
                     } label: {
                         Image(systemName: "square.and.pencil")
@@ -78,19 +76,21 @@ struct ContentView: View {
             }
             
             
-            .navigationDestination(item: $shoppingNote) { noteToEdit in
-                ShoppingListView(initialTitle: noteToEdit.title, initialProducts: noteToEdit.product) { newTitle, newProducts in
+            .navigationDestination(item: $shoppingNote) { note in
+                ShoppingListView (note: note) { updatedNote in
                     
-                    let trimmedTitle = newTitle.trimmingCharacters(in: .whitespacesAndNewlines)
+                    let trimmedTitle = updatedNote.title.trimmingCharacters(in: .whitespacesAndNewlines)
                     guard !trimmedTitle.isEmpty else { return }
                     
-                    if let index = notes.firstIndex(where: { $0.id == noteToEdit.id }) {
+                    var finalNote = updatedNote
+                    finalNote.title = trimmedTitle
+                    finalNote.isShopping = true
+                    
+                    if let index = notes.firstIndex(where: { $0.id == finalNote.id }) {
+                        notes[index] = finalNote
                         
-                        notes[index].title = trimmedTitle
-                        notes[index].product = newProducts
                     } else {
-                        
-                        notes.append(Note(title: trimmedTitle, product: newProducts))
+                        notes.append(finalNote)
                     }
                 }
             }

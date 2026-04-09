@@ -3,7 +3,6 @@ import SwiftUI
 struct TextNoteView: View {
     @State var note: Note
     var onSave: (Note) -> Void
-    @Environment(\.dismiss) var dismiss
 
     var body: some View {
         VStack(spacing: 20) {

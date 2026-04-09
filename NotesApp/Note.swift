@@ -7,6 +7,6 @@ struct Note: Identifiable, Equatable, Hashable {
     var text: String = ""
     var drawing: [[CGPoint]] = []
     var isDrawing: Bool = false
-    var plan: Plan? = nil
     var paperStyle: DrawingView.PaperStyle = .grid
+    var plan: Plan? = nil
 }

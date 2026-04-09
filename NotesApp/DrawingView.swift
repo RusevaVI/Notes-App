@@ -2,8 +2,10 @@ import SwiftUI
 
 struct DrawingView: View {
 
-    var note: Note
+    @State var note: Note
+    @State private var currentLine: [CGPoint] = []
     var onSave: (Note) -> Void
+    let canvasSize = CGSize(width: 2000, height: 2000)
 
     enum PaperStyle: String, CaseIterable {
         case blank = "Пустой"
@@ -11,30 +13,13 @@ struct DrawingView: View {
         case lines = "Линейка"
     }
 
-    @State private var lines: [[CGPoint]]
-    @State private var currentLine: [CGPoint] = []
-    @State private var style: PaperStyle
-    @State private var title: String
-
-    @Environment(\.dismiss) var dismiss
-
-    let canvasSize = CGSize(width: 2000, height: 2000)
-
-    init(note: Note, onSave: @escaping (Note) -> Void) {
-        self.note = note
-        self.onSave = onSave
-        _title = State(initialValue: note.title)
-        _lines = State(initialValue: note.drawing)
-        _style = State(initialValue: note.paperStyle)
-    }
-
     var body: some View {
         VStack {
-            TextField("", text: $title)
+            TextField("", text: $note.title)
                 .font(.title)
                 .padding(.leading, 10)
 
-            Picker("Стиль", selection: $style) {
+            Picker("Стиль", selection: $note.paperStyle) {
                 ForEach(PaperStyle.allCases, id: \.self) { s in
                     Text(s.rawValue)
                 }
@@ -47,13 +32,13 @@ struct DrawingView: View {
                 
                 ScrollView([.vertical], showsIndicators: true) {
                     ZStack {
-                        PaperBackground(style: style)
+                        PaperBackground(style: note.paperStyle)
                             .frame(width: canvasSize.width, height: canvasSize.height)
 
                         
-                        ForEach(lines.indices, id: \.self) { i in
+                        ForEach(note.drawing.indices, id: \.self) { i in
                             Path { path in
-                                let line = lines[i]
+                                let line = note.drawing[i]
                                 guard let first = line.first else { return }
                                 path.move(to: first)
                                 for point in line.dropFirst() {
@@ -82,7 +67,7 @@ struct DrawingView: View {
                                 currentLine.append(value.location)
                             }
                             .onEnded { _ in
-                                lines.append(currentLine)
+                                note.drawing.append(currentLine)
                                 currentLine = []
                             }
                     )
@@ -93,25 +78,21 @@ struct DrawingView: View {
             
             HStack {
                 Button("Очистить") {
-                    lines.removeAll()
+                    note.drawing.removeAll()
                     currentLine.removeAll()
                 }
                 .padding()
 
                 Button("Отменить") {
-                    if !lines.isEmpty {
-                        lines.removeLast()
+                    if !note.drawing.isEmpty {
+                        note.drawing.removeLast()
                     }
                 }
                 .padding()
             }
         }
         .onDisappear {
-            var updated = note
-            updated.drawing = lines
-            updated.paperStyle = style
-            updated.title = title
-            onSave(updated)
+            onSave(note)
         }
     }
 }
